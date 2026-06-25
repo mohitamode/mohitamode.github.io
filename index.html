@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohit Shyam Amode — Data Analyst specializing in dashboard development, SQL, observability, and machine learning.">
+    <meta name="keywords" content="data analyst, portfolio, SQL, Power BI, Tableau, Grafana, dashboards, machine learning">
+    <meta name="author" content="Mohit Shyam Amode">
+    <title>Mohit Shyam Amode — Data Analyst</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    /* ============================================
+       Design System (matched to reference template)
+       ============================================ */
+    :root {
+        --color-bg-primary: #FFFFFF;
+        --color-bg-secondary: #FAFAFA;
+        --color-bg-tertiary: #F5F5F5;
+
+        --color-text-primary: #1F2937;
+        --color-text-secondary: #6B7280;
+        --color-text-tertiary: #9CA3AF;
+
+        --color-accent-pink: #FF6B9D;
+        --color-accent-purple: #C084FC;
+        --color-accent-blue: #60A5FA;
+        --color-accent-green: #34D399;
+        --color-accent-yellow: #FBBF24;
+        --color-accent-coral: #FF8A80;
+
+        --gradient-primary: linear-gradient(135deg, #FF6B9D 0%, #C084FC 100%);
+        --gradient-secondary: linear-gradient(135deg, #60A5FA 0%, #34D399 100%);
+        --gradient-warm: linear-gradient(135deg, #FBBF24 0%, #FF8A80 100%);
+
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-2xl: 4rem;
+        --spacing-3xl: 6rem;
+
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+
+        --font-size-xs: 0.75rem;
+        --font-size-sm: 0.875rem;
+        --font-size-base: 1rem;
+        --font-size-lg: 1.125rem;
+        --font-size-xl: 1.25rem;
+        --font-size-2xl: 1.5rem;
+        --font-size-3xl: 2rem;
+        --font-size-4xl: 2.5rem;
+        --font-size-5xl: 3rem;
+
+        --radius-sm: 0.5rem;
+        --radius-md: 0.75rem;
+        --radius-lg: 1rem;
+        --radius-xl: 1.5rem;
+        --radius-full: 9999px;
+
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        --transition-fast: 0.15s ease;
+        --transition-base: 0.3s ease;
+        --transition-slow: 0.5s ease;
+
+        --z-navbar: 100;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+        font-family: var(--font-body);
+        font-size: var(--font-size-base);
+        line-height: 1.6;
+        color: var(--color-text-primary);
+        background-color: var(--color-bg-primary);
+        overflow-x: hidden;
+    }
+
+    ::selection { background-color: var(--color-accent-pink); color: white; }
+
+    /* Utilities */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+    .section { padding: var(--spacing-3xl) 0; }
+    .section-title {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-4xl);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+    .section-subtitle {
+        text-align: center;
+        font-size: var(--font-size-lg);
+        color: var(--color-text-secondary);
+        max-width: 600px;
+        margin: 0 auto var(--spacing-xl);
+    }
+
+    /* Navigation */
+    .navbar {
+        position: fixed; top: 0; left: 0; right: 0;
+        z-index: var(--z-navbar);
+        padding: var(--spacing-md) 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all var(--transition-base);
+    }
+    .navbar.scrolled { padding: var(--spacing-sm) 0; box-shadow: var(--shadow-sm); }
+    .nav-content { display: flex; justify-content: space-between; align-items: center; }
+    .nav-brand {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xl);
+        font-weight: 700;
+        color: var(--color-text-primary);
+        text-decoration: none;
+        transition: color var(--transition-fast);
+    }
+    .nav-brand:hover { color: var(--color-accent-pink); }
+    .nav-toggle {
+        display: none; flex-direction: column;
+        background: none; border: none; cursor: pointer;
+        padding: var(--spacing-xs); gap: 4px;
+    }
+    .nav-toggle span {
+        width: 24px; height: 2px;
+        background: var(--color-text-primary);
+        border-radius: var(--radius-full);
+        transition: all var(--transition-fast);
+    }
+    .nav-menu { display: flex; list-style: none; gap: var(--spacing-lg); align-items: center; }
+    .nav-menu li a {
+        color: var(--color-text-secondary);
+        text-decoration: none; font-weight: 500;
+        font-size: var(--font-size-sm);
+        transition: color var(--transition-fast);
+        position: relative;
+    }
+    .nav-menu li a::after {
+        content: ''; position: absolute; bottom: -4px; left: 0;
+        width: 0; height: 2px; background: var(--gradient-primary);
+        transition: width var(--transition-base);
+    }
+    .nav-menu li a:hover, .nav-menu li a.active { color: var(--color-text-primary); }
+    .nav-menu li a:hover::after, .nav-menu li a.active::after { width: 100%; }
+
+    /* Hero */
+    .hero-section {
+        min-height: 100vh; display: flex; align-items: center;
+        padding-top: calc(var(--spacing-3xl) + 60px);
+        padding-bottom: var(--spacing-3xl);
+        background: linear-gradient(180deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    }
+    .hero-content {
+        display: grid; grid-template-columns: 1.2fr 1fr;
+        gap: var(--spacing-xl); align-items: center;
+        margin-bottom: var(--spacing-xl);
+    }
+    .hero-text { animation: fadeInUp 0.8s ease; }
+    .hero-greeting { font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); }
+    .hero-name {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-5xl); font-weight: 700;
+        margin-bottom: var(--spacing-xs); line-height: 1.1;
+    }
+    .hero-title {
+        font-size: var(--font-size-2xl); font-weight: 600;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text; margin-bottom: var(--spacing-sm);
+    }
+    .hero-subtitle { font-size: var(--font-size-xl); color: var(--color-text-secondary); margin-bottom: var(--spacing-md); }
+    .hero-description {
+        font-size: var(--font-size-lg); color: var(--color-text-secondary);
+        line-height: 1.7; max-width: 600px; margin-bottom: var(--spacing-lg);
+    }
+    .hero-cta { display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); flex-wrap: wrap; }
+
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        border-radius: var(--radius-full); font-weight: 600;
+        font-size: var(--font-size-base); text-decoration: none;
+        display: inline-flex; align-items: center; gap: var(--spacing-xs);
+        transition: all var(--transition-base); cursor: pointer;
+        border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--gradient-primary); color: white; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-outline { background: transparent; color: var(--color-text-primary); border-color: var(--color-text-tertiary); }
+    .btn-outline:hover { border-color: var(--color-accent-pink); color: var(--color-accent-pink); transform: translateY(-2px); }
+
+    .hero-social { display: flex; gap: var(--spacing-md); }
+    .social-link {
+        width: 45px; height: 45px; border-radius: var(--radius-md);
+        background: var(--color-bg-tertiary);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--color-text-secondary); font-size: var(--font-size-lg);
+        transition: all var(--transition-base); text-decoration: none;
+    }
+    .social-link:hover { background: var(--gradient-primary); color: white; transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .hero-image { position: relative; animation: fadeInRight 0.8s ease 0.2s backwards; }
+    .hero-image-wrapper { position: relative; border-radius: var(--radius-xl); }
+    .hero-decoration {
+        position: absolute; top: -20px; right: -20px;
+        width: 150px; height: 150px; background: var(--gradient-primary);
+        border-radius: var(--radius-lg); opacity: 0.3; z-index: 0;
+    }
+    .hero-avatar {
+        position: relative; z-index: 1;
+        width: 100%; aspect-ratio: 1; max-width: 380px; margin-left: auto;
+        border-radius: var(--radius-xl);
+        background: var(--gradient-primary);
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: var(--shadow-xl);
+    }
+    .hero-avatar span {
+        font-family: var(--font-heading);
+        font-size: 7rem; font-weight: 700; color: white;
+        letter-spacing: 2px;
+    }
+
+    .hero-stats {
+        display: grid; grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg); padding: var(--spacing-xl);
+        background: white; border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-md);
+        animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
+    .stat-item { text-align: center; padding: var(--spacing-md); }
+    .stat-number {
+        font-family: var(--font-heading); font-size: var(--font-size-3xl); font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text; display: block; margin-bottom: var(--spacing-xs);
+    }
+    .stat-label { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+
+    /* About */
+    .about-section { background: white; }
+    .about-content { max-width: 900px; margin: 0 auto var(--spacing-xl); }
+    .about-text { margin-bottom: var(--spacing-xl); }
+    .about-text p { font-size: var(--font-size-lg); line-height: 1.8; color: var(--color-text-secondary); margin-bottom: var(--spacing-md); }
+    .about-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--spacing-lg); }
+    .highlight-card { padding: var(--spacing-lg); background: var(--color-bg-secondary); border-radius: var(--radius-lg); transition: all var(--transition-base); }
+    .highlight-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .highlight-card i {
+        font-size: var(--font-size-3xl); background: var(--gradient-primary);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text; margin-bottom: var(--spacing-md);
+    }
+    .highlight-card h3 { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: var(--spacing-xs); }
+    .highlight-card p { font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.6; }
+    .about-resume { text-align: center; margin-top: var(--spacing-xl); }
+
+    /* Experience */
+    .experience-section { background: var(--color-bg-secondary); }
+    .experience-grid { display: grid; gap: var(--spacing-lg); max-width: 900px; margin: 0 auto; }
+    .experience-card {
+        padding: var(--spacing-xl); background: white; border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-sm); transition: all var(--transition-base);
+        border-left: 4px solid transparent;
+    }
+    .experience-card:hover { transform: translateX(5px); box-shadow: var(--shadow-lg); border-left-color: var(--color-accent-pink); }
+    .experience-header { display: flex; align-items: flex-start; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
+    .exp-logo { width: 54px; height: 54px; flex-shrink: 0; border-radius: var(--radius-md); background: #fff; padding: 9px; object-fit: contain; border: 1px solid var(--color-bg-tertiary); box-shadow: var(--shadow-sm); }
+    .experience-role { font-family: var(--font-heading); font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--spacing-xs); }
+    .experience-company { font-size: var(--font-size-lg); color: var(--color-text-secondary); margin-bottom: var(--spacing-xs); }
+    .experience-period { font-size: var(--font-size-sm); color: var(--color-text-tertiary); }
+    .experience-achievements { list-style: none; margin-bottom: var(--spacing-md); }
+    .experience-achievements li { padding-left: var(--spacing-md); margin-bottom: var(--spacing-sm); position: relative; color: var(--color-text-secondary); }
+    .experience-achievements li::before { content: '▸'; position: absolute; left: 0; color: var(--color-accent-pink); font-weight: bold; }
+    .experience-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
+    .tag { padding: var(--spacing-xs) var(--spacing-sm); background: var(--color-bg-secondary); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 500; }
+
+    /* Portfolio / Projects */
+    .portfolio-section { background: white; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--spacing-xl); }
+    .portfolio-card { background: white; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); transition: all var(--transition-base); }
+    a.portfolio-card { display: block; text-decoration: none; color: inherit; }
+    .portfolio-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-xl); }
+    .portfolio-image { width: 100%; height: 200px; position: relative; overflow: hidden; background-size: cover; background-position: center; background-repeat: no-repeat; transition: transform var(--transition-base); }
+    .portfolio-card:hover .portfolio-image { transform: scale(1.04); }
+    .portfolio-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.4) 100%); }
+    .portfolio-badge {
+        position: absolute; left: var(--spacing-sm); bottom: var(--spacing-sm); z-index: 2;
+        font-family: var(--font-heading); font-size: var(--font-size-xs); font-weight: 600;
+        color: var(--color-accent-pink); background: rgba(255, 255, 255, 0.95);
+        padding: 5px 12px; border-radius: var(--radius-full); box-shadow: var(--shadow-md);
+    }
+    .portfolio-content { padding: var(--spacing-lg); }
+    .portfolio-links { margin-top: var(--spacing-md); }
+    .portfolio-link { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-accent-pink); transition: gap var(--transition-fast); display: inline-flex; align-items: center; gap: 4px; }
+    .portfolio-card:hover .portfolio-link { gap: 10px; }
+    .portfolio-category { font-size: var(--font-size-xs); font-weight: 600; color: var(--color-accent-pink); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-xs); }
+    .portfolio-title { font-family: var(--font-heading); font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--spacing-sm); }
+    .portfolio-description { color: var(--color-text-secondary); margin-bottom: var(--spacing-md); line-height: 1.6; font-size: var(--font-size-sm); }
+    .portfolio-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
+
+    /* Skills */
+    .skills-section { background: var(--color-bg-secondary); }
+    .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
+    .skill-category { padding: var(--spacing-xl); background: white; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
+    .skill-category-header { display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
+    .skill-category-header i { font-size: var(--font-size-2xl); color: var(--color-accent-pink); }
+    .skill-category-name { font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 600; }
+    .skill-item { margin-bottom: var(--spacing-md); }
+    .skill-item:last-child { margin-bottom: 0; }
+    .skill-info { display: flex; justify-content: space-between; margin-bottom: var(--spacing-xs); }
+    .skill-name { font-size: var(--font-size-sm); font-weight: 500; }
+    .skill-level-text { font-size: var(--font-size-xs); color: var(--color-text-tertiary); }
+    .skill-bar { height: 6px; background: var(--color-bg-secondary); border-radius: var(--radius-full); overflow: hidden; }
+    .skill-bar-fill { height: 100%; width: 0; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1.2s ease; }
+
+    /* Education & Certifications */
+    .education-section { background: white; }
+    .edu-wrapper { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--spacing-xl); max-width: 1000px; margin: 0 auto; }
+    .edu-block h3, .cert-block h3 { font-family: var(--font-heading); font-size: var(--font-size-xl); margin-bottom: var(--spacing-lg); display: flex; align-items: center; gap: var(--spacing-sm); }
+    .edu-block h3 i, .cert-block h3 i { color: var(--color-accent-pink); }
+    .edu-card { padding: var(--spacing-lg); background: var(--color-bg-secondary); border-radius: var(--radius-lg); margin-bottom: var(--spacing-md); }
+    .edu-card h4 { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: 4px; }
+    .edu-card .edu-meta { color: var(--color-text-secondary); font-size: var(--font-size-sm); }
+    .edu-card .edu-date { color: var(--color-text-tertiary); font-size: var(--font-size-xs); margin-top: var(--spacing-xs); }
+    .cert-list { list-style: none; }
+    .cert-list li {
+        padding: var(--spacing-md); background: var(--color-bg-secondary);
+        border-radius: var(--radius-md); margin-bottom: var(--spacing-sm);
+        display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-sm);
+    }
+    .cert-list li i { color: var(--color-accent-purple); margin-right: var(--spacing-xs); }
+    .cert-name { font-size: var(--font-size-sm); font-weight: 500; }
+    .cert-date { font-size: var(--font-size-xs); color: var(--color-text-tertiary); white-space: nowrap; }
+
+    /* Leadership */
+    .leadership-section { background: var(--color-bg-secondary); }
+    .leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); max-width: 1000px; margin: 0 auto; }
+    .leadership-card { padding: var(--spacing-xl); background: white; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); transition: all var(--transition-base); }
+    .leadership-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .leadership-card .lead-role { font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 600; margin-bottom: var(--spacing-xs); }
+    .leadership-card .lead-org { color: var(--color-text-secondary); font-size: var(--font-size-sm); margin-bottom: var(--spacing-xs); }
+    .leadership-card .lead-date { color: var(--color-text-tertiary); font-size: var(--font-size-xs); margin-bottom: var(--spacing-md); }
+    .leadership-card p { color: var(--color-text-secondary); font-size: var(--font-size-sm); line-height: 1.7; }
+
+    /* Contact */
+    .contact-section { background: white; }
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); max-width: 900px; margin: 0 auto var(--spacing-xl); }
+    .contact-info { display: flex; flex-direction: column; gap: var(--spacing-md); }
+    .contact-info-item { padding: var(--spacing-md); background: var(--color-bg-secondary); border-radius: var(--radius-md); display: flex; align-items: flex-start; gap: var(--spacing-md); text-decoration: none; transition: all var(--transition-base); }
+    .contact-info-item:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+    .contact-info-item i { font-size: var(--font-size-xl); color: var(--color-accent-pink); margin-top: 4px; }
+    .contact-info-content h4 { font-size: var(--font-size-sm); color: var(--color-text-tertiary); margin-bottom: 4px; font-weight: 500; }
+    .contact-info-content p { font-size: var(--font-size-base); color: var(--color-text-primary); font-weight: 500; word-break: break-word; }
+    .contact-cta-box {
+        padding: var(--spacing-xl); border-radius: var(--radius-xl);
+        background: var(--gradient-primary); color: white;
+        display: flex; flex-direction: column; justify-content: center; gap: var(--spacing-md);
+    }
+    .contact-cta-box h3 { font-family: var(--font-heading); font-size: var(--font-size-2xl); }
+    .contact-cta-box p { opacity: 0.95; line-height: 1.7; }
+    .contact-cta-box .btn { background: white; color: var(--color-accent-pink); align-self: flex-start; }
+    .contact-cta-box .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
+    /* Footer */
+    .footer { background: var(--color-text-primary); padding: var(--spacing-xl) 0; color: rgba(255, 255, 255, 0.8); }
+    .footer-content { text-align: center; }
+    .footer-text { font-size: var(--font-size-lg); margin-bottom: var(--spacing-md); color: white; }
+    .footer-social { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+    .footer-social a {
+        width: 45px; height: 45px; border-radius: var(--radius-md);
+        background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center;
+        color: white; font-size: var(--font-size-lg); text-decoration: none; transition: all var(--transition-base);
+    }
+    .footer-social a:hover { background: var(--gradient-primary); transform: translateY(-3px); }
+    .footer-copyright { font-size: var(--font-size-sm); color: rgba(255, 255, 255, 0.6); }
+
+    .back-to-top {
+        position: fixed; bottom: 30px; right: 30px;
+        width: 50px; height: 50px; border-radius: var(--radius-full);
+        background: var(--gradient-primary); border: none; color: white;
+        font-size: var(--font-size-lg); cursor: pointer;
+        opacity: 0; visibility: hidden; transition: all var(--transition-base);
+        box-shadow: var(--shadow-lg); z-index: var(--z-navbar);
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-5px); box-shadow: var(--shadow-xl); }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+        .nav-toggle { display: flex; }
+        .nav-menu {
+            position: fixed; top: 70px; left: -100%; width: 100%; max-width: 300px;
+            height: calc(100vh - 70px); background: white; flex-direction: column;
+            padding: var(--spacing-lg); transition: left var(--transition-base);
+            box-shadow: var(--shadow-xl); gap: var(--spacing-md); align-items: flex-start;
+        }
+        .nav-menu.active { left: 0; }
+        .hero-content { grid-template-columns: 1fr; text-align: center; }
+        .hero-text { order: 2; }
+        .hero-image { order: 1; max-width: 280px; margin: 0 auto; }
+        .hero-avatar { margin: 0 auto; }
+        .hero-cta, .hero-social { justify-content: center; }
+        .contact-wrapper, .edu-wrapper { grid-template-columns: 1fr; }
+        .portfolio-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+        :root { --font-size-5xl: 2.5rem; --font-size-4xl: 2rem; --font-size-3xl: 1.75rem; --spacing-3xl: 4rem; }
+        .section { padding: var(--spacing-2xl) 0; }
+        .hero-stats { grid-template-columns: 1fr; }
+        .skills-categories { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+        :root { --font-size-5xl: 2rem; --font-size-4xl: 1.75rem; --spacing-xl: 2rem; --spacing-2xl: 3rem; }
+        .container { padding: 0 var(--spacing-sm); }
+        .hero-cta { flex-direction: column; width: 100%; }
+        .btn { width: 100%; justify-content: center; }
+        .hero-avatar span { font-size: 5rem; }
+    }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#hero" class="nav-brand">Mohit Amode</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-greeting">Hi there! I'm</p>
+                    <h1 class="hero-name">Mohit Shyam Amode</h1>
+                    <h2 class="hero-title">Data Analyst</h2>
+                    <p class="hero-subtitle">Dashboards · SQL · Observability · Machine Learning</p>
+                    <p class="hero-description">
+                        I turn messy, high-volume data into clear, decision-ready dashboards. From Power BI and
+                        Tableau to Grafana and PromQL, I build reporting workflows that replace guesswork with
+                        analytics — across nonprofits, government, AR/VR, and higher education.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#portfolio" class="btn btn-primary"><i class="fas fa-chart-line"></i> View My Work</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://linkedin.com/in/mohitamode" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:mohitshyamamode@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+12063315057" class="social-link" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-decoration"></div>
+                        <div class="hero-avatar"><span>MA</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">250K+</span>
+                    <span class="stat-label">Records Engineered into ML-Ready Datasets</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">92%</span>
+                    <span class="stat-label">Model Accuracy (Random Forest / GAM)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Stakeholders Served by Live Dashboards</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section section">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content">
+                <div class="about-text reveal">
+                    <p>
+                        I'm a Data Analyst with a Master of Science in Data Science from Seattle
+                        University. I specialize in dashboard development, SQL and NoSQL data modeling, query
+                        optimization, and translating operational requirements into actionable insights.
+                    </p>
+                    <p>
+                        My work spans the full analytics lifecycle — cleaning and validating raw records, building
+                        reporting pipelines in JSON and CSV, and shipping dashboards in Power BI, Tableau, Grafana,
+                        and Looker Studio. I've supported a $120K annual Google Ad Grant, validated 2,000+ AR/VR
+                        recordings for ML workflows at Meta, and built ML models guiding real-world fisheries decisions.
+                    </p>
+                </div>
+                <div class="about-highlights">
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-gauge-high"></i>
+                        <h3>Dashboard Development</h3>
+                        <p>Power BI, Tableau, Grafana, Looker Studio, R Shiny &amp; Streamlit dashboards for KPI and BI reporting.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-database"></i>
+                        <h3>Data Engineering</h3>
+                        <p>SQL &amp; NoSQL modeling, aggregation pipelines, query optimization, and JSON/CSV reporting workflows.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-brain"></i>
+                        <h3>ML &amp; Modeling</h3>
+                        <p>Random Forest, GAM, Balanced RF, RAG systems, vector search, and OpenAI embeddings with LangChain.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-wave-square"></i>
+                        <h3>Observability</h3>
+                        <p>Prometheus telemetry, PromQL, time-series &amp; streaming data, and operational monitoring at scale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Work Experience</h2>
+            <div class="experience-grid">
+
+                <div class="experience-card reveal">
+                    <div class="experience-header">
+                        <img class="exp-logo" src="assets/logos/ecoservants.png" alt="EcoServants logo" loading="lazy">
+                        <div>
+                            <h3 class="experience-role">Data Analysis &amp; Research Intern</h3>
+                            <p class="experience-company">EcoServants Project · Remote, USA</p>
+                            <p class="experience-period">September 2025 – Current</p>
+                        </div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Analyzed website engagement and outreach datasets using Google Analytics, SQL, JSON, and CSV reporting workflows, supporting data-driven decisions tied to a $120,000 annual Google Ad Grant.</li>
+                        <li>Organized outreach and field-submission datasets with Python, SQL, and NoSQL-style workflows, improving data accessibility and reporting efficiency for donor, volunteer, and nonprofit initiatives.</li>
+                        <li>Standardized and validated 300+ plant taxonomy records and mapped 100+ geotagged submissions, improving structured-data consistency and regional reporting.</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">Google Analytics</span><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">JSON</span><span class="tag">Data Validation</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="experience-header">
+                        <img class="exp-logo" src="assets/logos/meta.png" alt="Meta logo" loading="lazy">
+                        <div>
+                            <h3 class="experience-role">Data Analyst (Contract)</h3>
+                            <p class="experience-company">Qualitest — Client: Meta · Seattle, WA</p>
+                            <p class="experience-period">April 2026 – May 2026</p>
+                        </div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Evaluated and validated 2,000+ AR/VR recordings against structured CSV quality parameters, ensuring near-100% compliance accuracy for AI and ML workflows.</li>
+                        <li>Performed QA and failure analysis on multi-modal data-collection workflows, identifying annotation inconsistencies that reduced rework for engineering teams by 25%.</li>
+                        <li>Conducted structured data validation for autonomous bot-training pipelines, improving workflow precision and supporting scalable ML model development.</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">AR/VR Data</span><span class="tag">QA</span><span class="tag">CSV</span><span class="tag">ML Workflows</span><span class="tag">Failure Analysis</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="experience-header">
+                        <img class="exp-logo" src="assets/logos/wdfw.png" alt="WDFW logo" loading="lazy">
+                        <div>
+                            <h3 class="experience-role">Data Analyst (Capstone)</h3>
+                            <p class="experience-company">Washington Department of Fish &amp; Wildlife · Seattle, WA</p>
+                            <p class="experience-period">January 2025 – June 2025</p>
+                        </div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Built a Power BI analytics dashboard used by 30+ stakeholders to visualize biological trends and environmental metrics, enabling data-driven fishing permissions.</li>
+                        <li>Automated and merged 250K+ biological and sensor records into ML-ready JSON and CSV datasets, reducing data-entry errors and supporting legal-size crab catch decisions.</li>
+                        <li>Built Random Forest, GAM, and Balanced RF models achieving 92% accuracy and a 0.78 F1 score, improving regional fisheries visibility.</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">Power BI</span><span class="tag">Random Forest</span><span class="tag">GAM</span><span class="tag">Python</span><span class="tag">Feature Engineering</span>
+                    </div>
+                </div>
+
+                <div class="experience-card reveal">
+                    <div class="experience-header">
+                        <img class="exp-logo" src="assets/logos/seattleu.png" alt="Seattle University logo" loading="lazy">
+                        <div>
+                            <h3 class="experience-role">Data Analyst Intern</h3>
+                            <p class="experience-company">Education Abroad Office, Seattle University · Seattle, WA</p>
+                            <p class="experience-period">June 2024 – June 2025</p>
+                        </div>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Built MS Access databases and Tableau dashboards from structured JSON and CSV datasets, cutting program-report lookup time from 15 minutes to instant KPI visibility for 5 staff.</li>
+                        <li>Identified 6 high-demand study-abroad programs through SQL analysis, increasing summer enrollment 30% (200 → 280 students) and improving cross-department reporting.</li>
+                    </ul>
+                    <div class="experience-tags">
+                        <span class="tag">Tableau</span><span class="tag">MS Access</span><span class="tag">SQL</span><span class="tag">KPI Reporting</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects / Portfolio -->
+    <section id="portfolio" class="portfolio-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Featured Projects</h2>
+            <p class="section-subtitle reveal">Pulled straight from <a href="https://github.com/mohitamode" target="_blank" rel="noopener" style="color:var(--color-accent-pink);font-weight:600">github.com/mohitamode</a> — each card links to the real repo</p>
+            <div class="portfolio-grid">
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/multi-agentic-rag" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-rag.png');">
+                        <span class="portfolio-badge">9 agents</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">GenAI · GitHub</p>
+                        <h3 class="portfolio-title">Multi-Agentic RAG</h3>
+                        <p class="portfolio-description">A Streamlit RAG app where nine specialized LangChain/Groq agents route queries, retrieve from uploaded files or the web, then self-correct, fact-check, and safety-check each answer.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">LangChain</span><span class="tag">Groq</span><span class="tag">Streamlit</span><span class="tag">RAG</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/microservices-observability" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-observability.png');">
+                        <span class="portfolio-badge">5 patterns</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Observability · GitHub</p>
+                        <h3 class="portfolio-title">Microservices Observability</h3>
+                        <p class="portfolio-description">A Spring Boot microservices demo instrumented for distributed monitoring and tracing — custom Prometheus metrics, Grafana dashboards, and end-to-end Jaeger tracing.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Spring Boot</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Jaeger</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/spark-and-kafka_iot-data-processing-and-analytics" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-streaming.png');">
+                        <span class="portfolio-badge">Real-time</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Streaming · GitHub</p>
+                        <h3 class="portfolio-title">Spark + Kafka IoT Pipeline</h3>
+                        <p class="portfolio-description">End-to-end streaming pipeline that ingests IoT sensor data through Kafka and processes it in real time with Spark for live analytics.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">Python</span><span class="tag">Streaming</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/financial-insights-in-banking-data-using-powerbi" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-powerbi.png');">
+                        <span class="portfolio-badge">2 datasets</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Business Intelligence · GitHub</p>
+                        <h3 class="portfolio-title">Banking Insights · Power BI</h3>
+                        <p class="portfolio-description">An interactive Power BI dashboard turning banking transaction and customer account data into actionable insight, with a branch efficiency rating system and credit-score risk analysis.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">EDA</span><span class="tag">Data Modeling</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/log-analysis-anomaly-detection" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-anomaly.png');">
+                        <span class="portfolio-badge">Real-time</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">ML Monitoring · GitHub</p>
+                        <h3 class="portfolio-title">Log Anomaly Detection</h3>
+                        <p class="portfolio-description">A Python log-analysis pipeline that parses logs, extracts features, and flags security threats in real time using an Isolation Forest model with live monitoring and visualization.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span><span class="tag">Isolation Forest</span><span class="tag">Anomaly Detection</span><span class="tag">Log Analysis</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/sales-insights-data-analysis-using-tableau-and-sql" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-tableau.png');">
+                        <span class="portfolio-badge">Star schema</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Business Intelligence · GitHub</p>
+                        <h3 class="portfolio-title">Sales Insights · Tableau + SQL</h3>
+                        <p class="portfolio-description">SQL ETL pipeline and star-schema model feeding an interactive Tableau dashboard that surfaces revenue, profit, and top-customer insights for an India-based hardware company.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">BI</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Skills &amp; Tools</h2>
+            <p class="section-subtitle reveal">Technologies and tools I work with across the analytics stack</p>
+            <div class="skills-categories">
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-code"></i><span class="skill-category-name">Programming</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Python</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="95%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">R</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">JavaScript / C / C++</span><span class="skill-level-text">Working</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="68%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-database"></i><span class="skill-category-name">Databases &amp; Querying</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MongoDB / NoSQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MySQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Query Optimization</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Modeling &amp; Aggregation Pipelines</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="86%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-chart-pie"></i><span class="skill-category-name">Dashboarding &amp; BI</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Power BI</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Tableau</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Grafana</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Looker Studio / R Shiny / Streamlit</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="82%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-magnifying-glass-chart"></i><span class="skill-category-name">Analytics &amp; Monitoring</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Statistical &amp; Time-Series Analysis</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Cleaning &amp; Validation</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="93%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Telemetry &amp; Observability</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Operational Analytics</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="87%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-layer-group"></i><span class="skill-category-name">Data &amp; Cloud Tech</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">JSON / CSV / Streaming Data</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Kafka / Prometheus / PromQL</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="78%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">GA4 / BigQuery / AWS</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">LangChain / OpenAI Embeddings / Git</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="79%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-people-group"></i><span class="skill-category-name">Domain &amp; Soft Skills</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">KPI &amp; Business Intelligence Reporting</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Stakeholder Communication</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Requirements → Insight Translation</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="89%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">ArcGIS Pro / Geospatial Analysis</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="78%"></div></div></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="education-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Education &amp; Certifications</h2>
+            <div class="edu-wrapper">
+                <div class="edu-block reveal">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="edu-card">
+                        <h4>M.S. in Data Science</h4>
+                        <p class="edu-meta">Seattle University · Seattle, WA</p>
+                        <p class="edu-date">September 2023 – June 2025</p>
+                    </div>
+                    <div class="edu-card">
+                        <h4>B.E. in Electronics &amp; Telecommunication</h4>
+                        <p class="edu-meta">Honors in Data Science · Pune University</p>
+                        <p class="edu-date">June 2017 – June 2022</p>
+                    </div>
+                </div>
+                <div class="cert-block reveal">
+                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                    <ul class="cert-list">
+                        <li><span class="cert-name"><i class="fas fa-award"></i> Data Engineering with Databricks</span><span class="cert-date">Dec 2025</span></li>
+                        <li><span class="cert-name"><i class="fas fa-award"></i> Generative AI Fundamentals</span><span class="cert-date">Dec 2025</span></li>
+                        <li><span class="cert-name"><i class="fas fa-award"></i> Google AI Essentials</span><span class="cert-date">Nov 2025</span></li>
+                        <li><span class="cert-name"><i class="fas fa-award"></i> The Ultimate MySQL Bootcamp</span><span class="cert-date">Jul 2025</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership" class="leadership-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leadership-card reveal">
+                    <p class="lead-role">Vice President of Marketing &amp; Communication</p>
+                    <p class="lead-org">Graduate Student Council, Seattle University</p>
+                    <p class="lead-date">June 2024 – June 2025</p>
+                    <p>Led graduate communications, marketing, and governance — growing engagement from 150 to 650 and reaching 1,200+ students. Influenced adoption of AI coursework guidelines via the Board of Trustees Technology Committee and managed a $10K annual budget, raising average event attendance from 30 to 120.</p>
+                </div>
+                <div class="leadership-card reveal">
+                    <p class="lead-role">Event Coordinator</p>
+                    <p class="lead-org">Indian Student Association, Seattle University</p>
+                    <p class="lead-date">June 2024 – June 2025</p>
+                    <p>Planned and executed 4 recurring Indian cultural festival events, managing logistics and stakeholder coordination on time and on budget. Grew average attendance from 100 to 500+ per event and engaged a diverse campus community of 3,000+ students through targeted marketing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <h2 class="section-title reveal">Let's Work Together</h2>
+            <p class="section-subtitle reveal">Looking for a data analyst who ships dashboards that drive decisions? Let's talk.</p>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <a href="mailto:mohitshyamamode@gmail.com" class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-info-content"><h4>Email</h4><p>mohitshyamamode@gmail.com</p></div>
+                    </a>
+                    <a href="tel:+12063315057" class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-info-content"><h4>Phone</h4><p>(206) 331-5057</p></div>
+                    </a>
+                    <a href="https://linkedin.com/in/mohitamode" target="_blank" rel="noopener" class="contact-info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="contact-info-content"><h4>LinkedIn</h4><p>linkedin.com/in/mohitamode</p></div>
+                    </a>
+                </div>
+                <div class="contact-cta-box reveal">
+                    <h3>Open to Data Analyst roles</h3>
+                    <p>I'm available for full-time and contract data analytics work — dashboard development, reporting workflows, observability, and applied ML. Reach out and I'll get back to you quickly.</p>
+                    <a href="mailto:mohitshyamamode@gmail.com" class="btn"><i class="fas fa-paper-plane"></i> Send an Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Mohit Shyam Amode — Data Analyst</p>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/mohitamode" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:mohitshyamamode@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+12063315057" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                </div>
+                <p class="footer-copyright">© 2026 Mohit Shyam Amode. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+    (function () {
+        // Navbar scroll state
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
+            if (window.scrollY > 400) backToTop.classList.add('visible'); else backToTop.classList.remove('visible');
+        });
+        backToTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // Mobile nav toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', function () { navMenu.classList.toggle('active'); });
+        navMenu.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { navMenu.classList.remove('active'); });
+        });
+
+        // Scroll reveal + skill bar fill + nav active state
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    entry.target.querySelectorAll('.skill-bar-fill').forEach(function (bar) {
+                        bar.style.width = bar.getAttribute('data-level');
+                    });
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(function (el) { revealObserver.observe(el); });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const spy = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(function (link) {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        sections.forEach(function (s) { spy.observe(s); });
+    })();
+    </script>
+</body>
+</html>
