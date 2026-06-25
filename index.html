@@ -463,7 +463,7 @@
                     <p class="hero-greeting">Hi there! I'm</p>
                     <h1 class="hero-name">Mohit Shyam Amode</h1>
                     <h2 class="hero-title">Data Analyst</h2>
-                    <p class="hero-subtitle">Dashboards · SQL · Observability · Machine Learning</p>
+                    <p class="hero-subtitle">SQL · Power BI · Tableau · Python · Dashboards</p>
                     <p class="hero-description">
                         I turn messy, high-volume data into clear, decision-ready dashboards. From Power BI and
                         Tableau to Grafana and PromQL, I build reporting workflows that replace guesswork with
@@ -493,8 +493,8 @@
                     <span class="stat-label">Records Engineered into ML-Ready Datasets</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">92%</span>
-                    <span class="stat-label">Model Accuracy (Random Forest / GAM)</span>
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Enrollment Growth Driven by SQL Analysis</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">30+</span>
@@ -516,32 +516,43 @@
                         optimization, and translating operational requirements into actionable insights.
                     </p>
                     <p>
-                        My work spans the full analytics lifecycle — cleaning and validating raw records, building
-                        reporting pipelines in JSON and CSV, and shipping dashboards in Power BI, Tableau, Grafana,
-                        and Looker Studio. I've supported a $120K annual Google Ad Grant, validated 2,000+ AR/VR
-                        recordings for ML workflows at Meta, and built ML models guiding real-world fisheries decisions.
+                        My work spans the full analytics lifecycle — cleaning and validating raw records, writing SQL,
+                        and shipping dashboards in Power BI, Tableau, and Looker Studio. At Seattle University I cut
+                        program-report lookup from 15 minutes to instant KPI visibility and used SQL analysis to grow
+                        study-abroad enrollment 30% (200 → 280). I've also built Power BI dashboards used by 30+
+                        stakeholders and supported a $120K annual Google Ad Grant.
                     </p>
                 </div>
                 <div class="about-highlights">
                     <div class="highlight-card reveal">
                         <i class="fas fa-gauge-high"></i>
                         <h3>Dashboard Development</h3>
-                        <p>Power BI, Tableau, Grafana, Looker Studio, R Shiny &amp; Streamlit dashboards for KPI and BI reporting.</p>
+                        <p>Power BI, Tableau, Looker Studio, Grafana, R Shiny &amp; Streamlit dashboards for KPI and BI reporting.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                        <h3>Statistical Analysis</h3>
+                        <p>EDA, hypothesis testing, time-series and trend analysis — turning raw data into clear, defensible decisions.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>KPI &amp; Reporting</h3>
+                        <p>Operational KPI dashboards and reporting workflows — cut report lookup from 15 minutes to instant for staff.</p>
                     </div>
                     <div class="highlight-card reveal">
                         <i class="fas fa-database"></i>
-                        <h3>Data Engineering</h3>
+                        <h3>SQL &amp; Data Modeling</h3>
                         <p>SQL &amp; NoSQL modeling, aggregation pipelines, query optimization, and JSON/CSV reporting workflows.</p>
+                    </div>
+                    <div class="highlight-card reveal">
+                        <i class="fas fa-broom"></i>
+                        <h3>Data Cleaning &amp; Validation</h3>
+                        <p>Standardizing, validating and transforming large record sets for consistent, reliable, audit-ready reporting.</p>
                     </div>
                     <div class="highlight-card reveal">
                         <i class="fas fa-brain"></i>
                         <h3>ML &amp; Modeling</h3>
-                        <p>Random Forest, GAM, Balanced RF, RAG systems, vector search, and OpenAI embeddings with LangChain.</p>
-                    </div>
-                    <div class="highlight-card reveal">
-                        <i class="fas fa-wave-square"></i>
-                        <h3>Observability</h3>
-                        <p>Prometheus telemetry, PromQL, time-series &amp; streaming data, and operational monitoring at scale.</p>
+                        <p>Random Forest, GAM &amp; Balanced RF, plus RAG, vector search and OpenAI embeddings with LangChain.</p>
                     </div>
                 </div>
             </div>
@@ -637,15 +648,107 @@
     <section id="portfolio" class="portfolio-section section">
         <div class="container">
             <h2 class="section-title reveal">Featured Projects</h2>
-            <p class="section-subtitle reveal">Pulled straight from <a href="https://github.com/mohitamode" target="_blank" rel="noopener" style="color:var(--color-accent-pink);font-weight:600">github.com/mohitamode</a> — each card links to the real repo</p>
+            <p class="section-subtitle reveal">13 projects pulled straight from <a href="https://github.com/mohitamode" target="_blank" rel="noopener" style="color:var(--color-accent-pink);font-weight:600">github.com/mohitamode</a> — each card links to the real repo</p>
             <div class="portfolio-grid">
 
+                <!-- ===== DATA ANALYTICS ===== -->
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/sales-insights-data-analysis-using-tableau-and-sql" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-tableau.png');">
+                        <span class="portfolio-badge">Star schema</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Data Analytics · GitHub</p>
+                        <h3 class="portfolio-title">Sales Insights · Tableau + SQL</h3>
+                        <p class="portfolio-description">SQL ETL pipeline and star-schema model feeding an interactive Tableau dashboard that surfaces revenue, profit, and top-customer insights for an India-based hardware company.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">BI</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/financial-insights-in-banking-data-using-powerbi" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-powerbi.png');">
+                        <span class="portfolio-badge">2 datasets</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Business Intelligence · GitHub</p>
+                        <h3 class="portfolio-title">Banking Insights · Power BI</h3>
+                        <p class="portfolio-description">An interactive Power BI dashboard turning banking transaction and customer account data into actionable insight, with a branch efficiency rating system and credit-score risk analysis.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">EDA</span><span class="tag">Data Modeling</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/comprehensive-healthcare-analytics" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-healthcare.png');">
+                        <span class="portfolio-badge">End-to-end BI</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Data Analytics · GitHub</p>
+                        <h3 class="portfolio-title">Healthcare Analytics</h3>
+                        <p class="portfolio-description">End-to-end healthcare data analytics: SQL cleaning, Python EDA, and interactive Power BI dashboards surfacing billing trends, doctor performance, and patient insights.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Pandas</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/sql-for-financial-data-analysis" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-sqlfin.png');">
+                        <span class="portfolio-badge">5 datasets</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Data Analytics · GitHub</p>
+                        <h3 class="portfolio-title">SQL for Financial Analysis</h3>
+                        <p class="portfolio-description">A SQL system that turns five financial datasets — general ledger, chart of accounts, territory, calendar, and cash flow — into P&amp;L statements, balance sheets, cash-flow statements, and ratios.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SQL</span><span class="tag">Azure Data Studio</span><span class="tag">Financial Reporting</span><span class="tag">Data Analysis</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/sql-portfolio" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-sqlport.png');">
+                        <span class="portfolio-badge">8-platform SQL</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Data Analytics · GitHub</p>
+                        <h3 class="portfolio-title">SQL Portfolio</h3>
+                        <p class="portfolio-description">A comprehensive SQL portfolio featuring the 8 Week SQL Challenge case studies, solved problems across 8 coding platforms, and 5 real-world data-analysis projects.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SQL</span><span class="tag">Data Analysis</span><span class="tag">Case Studies</span><span class="tag">Query Optimization</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/analytics-engineering-prototype" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-analyticseng.png');">
+                        <span class="portfolio-badge">Kimball schema</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">Analytics Engineering · GitHub</p>
+                        <h3 class="portfolio-title">Analytics Engineering Prototype</h3>
+                        <p class="portfolio-description">Builds a Kimball-style dimensional model from Northwind OLTP data using dbt and BigQuery for fast, scalable, well-tested reporting.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">dbt</span><span class="tag">BigQuery</span><span class="tag">SQL</span><span class="tag">Dimensional Modeling</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <!-- ===== RAG / AI ===== -->
                 <a class="portfolio-card reveal" href="https://github.com/mohitamode/multi-agentic-rag" target="_blank" rel="noopener">
                     <div class="portfolio-image" style="background-image:url('assets/v1-proj-rag.png');">
                         <span class="portfolio-badge">9 agents</span>
                     </div>
                     <div class="portfolio-content">
-                        <p class="portfolio-category">GenAI · GitHub</p>
+                        <p class="portfolio-category">RAG / GenAI · GitHub</p>
                         <h3 class="portfolio-title">Multi-Agentic RAG</h3>
                         <p class="portfolio-description">A Streamlit RAG app where nine specialized LangChain/Groq agents route queries, retrieve from uploaded files or the web, then self-correct, fact-check, and safety-check each answer.</p>
                         <div class="portfolio-tags">
@@ -655,6 +758,52 @@
                     </div>
                 </a>
 
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/multimodal-live-rag-voice" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-ragvoice.png');">
+                        <span class="portfolio-badge">Live voice</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">RAG / GenAI · GitHub</p>
+                        <h3 class="portfolio-title">Multimodal Live RAG Voice</h3>
+                        <p class="portfolio-description">A multimodal live assistant that answers spoken questions in real time, pairing low-latency voice I/O with retrieval-augmented generation over your own knowledge base.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">RAG</span><span class="tag">Voice AI</span><span class="tag">Multimodal</span><span class="tag">Real-time</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/financial_advisor_llm" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-advisor.png');">
+                        <span class="portfolio-badge">LLM insights</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">RAG / GenAI · GitHub</p>
+                        <h3 class="portfolio-title">Financial Advisor LLM</h3>
+                        <p class="portfolio-description">An LLM-powered financial advisor that turns natural-language questions into personalized money insights, portfolio guidance, and easy-to-read financial summaries.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">LLM</span><span class="tag">Python</span><span class="tag">Finance</span><span class="tag">AI Chatbot</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <a class="portfolio-card reveal" href="https://github.com/mohitamode/multi-agent-conversation-for-disease-diagnosis" target="_blank" rel="noopener">
+                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-diagnosis.png');">
+                        <span class="portfolio-badge">Multi-agent</span>
+                    </div>
+                    <div class="portfolio-content">
+                        <p class="portfolio-category">RAG / GenAI · GitHub</p>
+                        <h3 class="portfolio-title">Multi-Agent Disease Diagnosis</h3>
+                        <p class="portfolio-description">A multi-agent AI system where specialized conversational agents collaborate to reason through patient symptoms and converge on a likely diagnosis.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Multi-Agent</span><span class="tag">LLM</span><span class="tag">Conversational AI</span><span class="tag">Healthcare</span>
+                        </div>
+                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
+                    </div>
+                </a>
+
+                <!-- ===== OBSERVABILITY / STREAMING ===== -->
                 <a class="portfolio-card reveal" href="https://github.com/mohitamode/microservices-observability" target="_blank" rel="noopener">
                     <div class="portfolio-image" style="background-image:url('assets/v1-proj-observability.png');">
                         <span class="portfolio-badge">5 patterns</span>
@@ -685,21 +834,6 @@
                     </div>
                 </a>
 
-                <a class="portfolio-card reveal" href="https://github.com/mohitamode/financial-insights-in-banking-data-using-powerbi" target="_blank" rel="noopener">
-                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-powerbi.png');">
-                        <span class="portfolio-badge">2 datasets</span>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Business Intelligence · GitHub</p>
-                        <h3 class="portfolio-title">Banking Insights · Power BI</h3>
-                        <p class="portfolio-description">An interactive Power BI dashboard turning banking transaction and customer account data into actionable insight, with a branch efficiency rating system and credit-score risk analysis.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">EDA</span><span class="tag">Data Modeling</span>
-                        </div>
-                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
-                    </div>
-                </a>
-
                 <a class="portfolio-card reveal" href="https://github.com/mohitamode/log-analysis-anomaly-detection" target="_blank" rel="noopener">
                     <div class="portfolio-image" style="background-image:url('assets/v1-proj-anomaly.png');">
                         <span class="portfolio-badge">Real-time</span>
@@ -710,21 +844,6 @@
                         <p class="portfolio-description">A Python log-analysis pipeline that parses logs, extracts features, and flags security threats in real time using an Isolation Forest model with live monitoring and visualization.</p>
                         <div class="portfolio-tags">
                             <span class="tag">Python</span><span class="tag">Isolation Forest</span><span class="tag">Anomaly Detection</span><span class="tag">Log Analysis</span>
-                        </div>
-                        <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
-                    </div>
-                </a>
-
-                <a class="portfolio-card reveal" href="https://github.com/mohitamode/sales-insights-data-analysis-using-tableau-and-sql" target="_blank" rel="noopener">
-                    <div class="portfolio-image" style="background-image:url('assets/v1-proj-tableau.png');">
-                        <span class="portfolio-badge">Star schema</span>
-                    </div>
-                    <div class="portfolio-content">
-                        <p class="portfolio-category">Business Intelligence · GitHub</p>
-                        <h3 class="portfolio-title">Sales Insights · Tableau + SQL</h3>
-                        <p class="portfolio-description">SQL ETL pipeline and star-schema model feeding an interactive Tableau dashboard that surfaces revenue, profit, and top-customer insights for an India-based hardware company.</p>
-                        <div class="portfolio-tags">
-                            <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">BI</span>
                         </div>
                         <div class="portfolio-links"><span class="portfolio-link">View Repo →</span></div>
                     </div>
@@ -743,50 +862,50 @@
 
                 <div class="skill-category reveal">
                     <div class="skill-category-header"><i class="fas fa-code"></i><span class="skill-category-name">Programming</span></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Python</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="95%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Python</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">R</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">JavaScript / C / C++</span><span class="skill-level-text">Working</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="68%"></div></div></div>
-                </div>
-
-                <div class="skill-category reveal">
-                    <div class="skill-category-header"><i class="fas fa-database"></i><span class="skill-category-name">Databases &amp; Querying</span></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MongoDB / NoSQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MySQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Query Optimization</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="85%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Modeling &amp; Aggregation Pipelines</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="86%"></div></div></div>
                 </div>
 
                 <div class="skill-category reveal">
                     <div class="skill-category-header"><i class="fas fa-chart-pie"></i><span class="skill-category-name">Dashboarding &amp; BI</span></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Power BI</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Tableau</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Grafana</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="85%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Looker Studio / R Shiny / Streamlit</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="82%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Looker Studio</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="84%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Grafana / R Shiny / Streamlit</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="82%"></div></div></div>
                 </div>
 
                 <div class="skill-category reveal">
-                    <div class="skill-category-header"><i class="fas fa-magnifying-glass-chart"></i><span class="skill-category-name">Analytics &amp; Monitoring</span></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Statistical &amp; Time-Series Analysis</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-category-header"><i class="fas fa-magnifying-glass-chart"></i><span class="skill-category-name">Analytics</span></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Cleaning &amp; Validation</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="93%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Telemetry &amp; Observability</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Statistical &amp; Time-Series Analysis</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">KPI &amp; BI Reporting</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Operational Analytics</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="87%"></div></div></div>
+                </div>
+
+                <div class="skill-category reveal">
+                    <div class="skill-category-header"><i class="fas fa-database"></i><span class="skill-category-name">Databases &amp; Querying</span></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MySQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MongoDB / NoSQL</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Query Optimization</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="85%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Modeling &amp; Aggregation</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="86%"></div></div></div>
                 </div>
 
                 <div class="skill-category reveal">
                     <div class="skill-category-header"><i class="fas fa-layer-group"></i><span class="skill-category-name">Data &amp; Cloud Tech</span></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">JSON / CSV / Streaming Data</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="92%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Kafka / Prometheus / PromQL</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="78%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">GA4 / BigQuery / AWS</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="80%"></div></div></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">LangChain / OpenAI Embeddings / Git</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="79%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Kafka / Prometheus / PromQL</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="78%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">LangChain / Embeddings / Git</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="79%"></div></div></div>
                 </div>
 
                 <div class="skill-category reveal">
                     <div class="skill-category-header"><i class="fas fa-people-group"></i><span class="skill-category-name">Domain &amp; Soft Skills</span></div>
-                    <div class="skill-item"><div class="skill-info"><span class="skill-name">KPI &amp; Business Intelligence Reporting</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Stakeholder Communication</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="88%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">Requirements → Insight Translation</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="89%"></div></div></div>
                     <div class="skill-item"><div class="skill-info"><span class="skill-name">ArcGIS Pro / Geospatial Analysis</span><span class="skill-level-text">Proficient</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="78%"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Data Storytelling</span><span class="skill-level-text">Advanced</span></div><div class="skill-bar"><div class="skill-bar-fill" data-level="90%"></div></div></div>
                 </div>
 
             </div>
