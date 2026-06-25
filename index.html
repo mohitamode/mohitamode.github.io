@@ -27,14 +27,14 @@
         --color-text-secondary: #6B7280;
         --color-text-tertiary: #9CA3AF;
 
-        --color-accent-pink: #FF6B9D;
+        --color-accent-primary: #2563EB;
         --color-accent-purple: #C084FC;
         --color-accent-blue: #60A5FA;
         --color-accent-green: #34D399;
         --color-accent-yellow: #FBBF24;
         --color-accent-coral: #FF8A80;
 
-        --gradient-primary: linear-gradient(135deg, #FF6B9D 0%, #C084FC 100%);
+        --gradient-primary: linear-gradient(135deg, #2563EB 0%, #38BDF8 100%);
         --gradient-secondary: linear-gradient(135deg, #60A5FA 0%, #34D399 100%);
         --gradient-warm: linear-gradient(135deg, #FBBF24 0%, #FF8A80 100%);
 
@@ -90,7 +90,7 @@
         overflow-x: hidden;
     }
 
-    ::selection { background-color: var(--color-accent-pink); color: white; }
+    ::selection { background-color: var(--color-accent-primary); color: white; }
 
     /* Utilities */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
@@ -130,7 +130,7 @@
         text-decoration: none;
         transition: color var(--transition-fast);
     }
-    .nav-brand:hover { color: var(--color-accent-pink); }
+    .nav-brand:hover { color: var(--color-accent-primary); }
     .nav-toggle {
         display: none; flex-direction: column;
         background: none; border: none; cursor: pointer;
@@ -201,7 +201,7 @@
     .btn-primary { background: var(--gradient-primary); color: white; box-shadow: var(--shadow-md); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .btn-outline { background: transparent; color: var(--color-text-primary); border-color: var(--color-text-tertiary); }
-    .btn-outline:hover { border-color: var(--color-accent-pink); color: var(--color-accent-pink); transform: translateY(-2px); }
+    .btn-outline:hover { border-color: var(--color-accent-primary); color: var(--color-accent-primary); transform: translateY(-2px); }
 
     .hero-social { display: flex; gap: var(--spacing-md); }
     .social-link {
@@ -271,7 +271,7 @@
         box-shadow: var(--shadow-sm); transition: all var(--transition-base);
         border-left: 4px solid transparent;
     }
-    .experience-card:hover { transform: translateX(5px); box-shadow: var(--shadow-lg); border-left-color: var(--color-accent-pink); }
+    .experience-card:hover { transform: translateX(5px); box-shadow: var(--shadow-lg); border-left-color: var(--color-accent-primary); }
     .experience-header { display: flex; align-items: flex-start; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
     .exp-logo { width: 54px; height: 54px; flex-shrink: 0; border-radius: var(--radius-md); background: #fff; padding: 9px; object-fit: contain; border: 1px solid var(--color-bg-tertiary); box-shadow: var(--shadow-sm); }
     .experience-role { font-family: var(--font-heading); font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--spacing-xs); }
@@ -279,7 +279,7 @@
     .experience-period { font-size: var(--font-size-sm); color: var(--color-text-tertiary); }
     .experience-achievements { list-style: none; margin-bottom: var(--spacing-md); }
     .experience-achievements li { padding-left: var(--spacing-md); margin-bottom: var(--spacing-sm); position: relative; color: var(--color-text-secondary); }
-    .experience-achievements li::before { content: '▸'; position: absolute; left: 0; color: var(--color-accent-pink); font-weight: bold; }
+    .experience-achievements li::before { content: '▸'; position: absolute; left: 0; color: var(--color-accent-primary); font-weight: bold; }
     .experience-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
     .tag { padding: var(--spacing-xs) var(--spacing-sm); background: var(--color-bg-secondary); border-radius: var(--radius-sm); font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 500; }
 
@@ -295,14 +295,14 @@
     .portfolio-badge {
         position: absolute; left: var(--spacing-sm); bottom: var(--spacing-sm); z-index: 2;
         font-family: var(--font-heading); font-size: var(--font-size-xs); font-weight: 600;
-        color: var(--color-accent-pink); background: rgba(255, 255, 255, 0.95);
+        color: var(--color-accent-primary); background: rgba(255, 255, 255, 0.95);
         padding: 5px 12px; border-radius: var(--radius-full); box-shadow: var(--shadow-md);
     }
     .portfolio-content { padding: var(--spacing-lg); }
     .portfolio-links { margin-top: var(--spacing-md); }
-    .portfolio-link { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-accent-pink); transition: gap var(--transition-fast); display: inline-flex; align-items: center; gap: 4px; }
+    .portfolio-link { font-size: var(--font-size-sm); font-weight: 600; color: var(--color-accent-primary); transition: gap var(--transition-fast); display: inline-flex; align-items: center; gap: 4px; }
     .portfolio-card:hover .portfolio-link { gap: 10px; }
-    .portfolio-category { font-size: var(--font-size-xs); font-weight: 600; color: var(--color-accent-pink); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-xs); }
+    .portfolio-category { font-size: var(--font-size-xs); font-weight: 600; color: var(--color-accent-primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: var(--spacing-xs); }
     .portfolio-title { font-family: var(--font-heading); font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--spacing-sm); }
     .portfolio-description { color: var(--color-text-secondary); margin-bottom: var(--spacing-md); line-height: 1.6; font-size: var(--font-size-sm); }
     .portfolio-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
@@ -312,7 +312,7 @@
     .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); }
     .skill-category { padding: var(--spacing-xl); background: white; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); }
     .skill-category-header { display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
-    .skill-category-header i { font-size: var(--font-size-2xl); color: var(--color-accent-pink); }
+    .skill-category-header i { font-size: var(--font-size-2xl); color: var(--color-accent-primary); }
     .skill-category-name { font-family: var(--font-heading); font-size: var(--font-size-lg); font-weight: 600; }
     .skill-item { margin-bottom: var(--spacing-md); }
     .skill-item:last-child { margin-bottom: 0; }
@@ -326,7 +326,7 @@
     .education-section { background: white; }
     .edu-wrapper { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--spacing-xl); max-width: 1000px; margin: 0 auto; }
     .edu-block h3, .cert-block h3 { font-family: var(--font-heading); font-size: var(--font-size-xl); margin-bottom: var(--spacing-lg); display: flex; align-items: center; gap: var(--spacing-sm); }
-    .edu-block h3 i, .cert-block h3 i { color: var(--color-accent-pink); }
+    .edu-block h3 i, .cert-block h3 i { color: var(--color-accent-primary); }
     .edu-card { padding: var(--spacing-lg); background: var(--color-bg-secondary); border-radius: var(--radius-lg); margin-bottom: var(--spacing-md); }
     .edu-card h4 { font-family: var(--font-heading); font-size: var(--font-size-lg); margin-bottom: 4px; }
     .edu-card .edu-meta { color: var(--color-text-secondary); font-size: var(--font-size-sm); }
@@ -337,7 +337,7 @@
         border-radius: var(--radius-md); margin-bottom: var(--spacing-sm);
         display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-sm);
     }
-    .cert-list li i { color: var(--color-accent-purple); margin-right: var(--spacing-xs); }
+    .cert-list li i { color: var(--color-accent-blue); margin-right: var(--spacing-xs); }
     .cert-name { font-size: var(--font-size-sm); font-weight: 500; }
     .cert-date { font-size: var(--font-size-xs); color: var(--color-text-tertiary); white-space: nowrap; }
 
@@ -357,7 +357,7 @@
     .contact-info { display: flex; flex-direction: column; gap: var(--spacing-md); }
     .contact-info-item { padding: var(--spacing-md); background: var(--color-bg-secondary); border-radius: var(--radius-md); display: flex; align-items: flex-start; gap: var(--spacing-md); text-decoration: none; transition: all var(--transition-base); }
     .contact-info-item:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
-    .contact-info-item i { font-size: var(--font-size-xl); color: var(--color-accent-pink); margin-top: 4px; }
+    .contact-info-item i { font-size: var(--font-size-xl); color: var(--color-accent-primary); margin-top: 4px; }
     .contact-info-content h4 { font-size: var(--font-size-sm); color: var(--color-text-tertiary); margin-bottom: 4px; font-weight: 500; }
     .contact-info-content p { font-size: var(--font-size-base); color: var(--color-text-primary); font-weight: 500; word-break: break-word; }
     .contact-cta-box {
@@ -367,7 +367,7 @@
     }
     .contact-cta-box h3 { font-family: var(--font-heading); font-size: var(--font-size-2xl); }
     .contact-cta-box p { opacity: 0.95; line-height: 1.7; }
-    .contact-cta-box .btn { background: white; color: var(--color-accent-pink); align-self: flex-start; }
+    .contact-cta-box .btn { background: white; color: var(--color-accent-primary); align-self: flex-start; }
     .contact-cta-box .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
 
     /* Footer */
@@ -648,7 +648,7 @@
     <section id="portfolio" class="portfolio-section section">
         <div class="container">
             <h2 class="section-title reveal">Featured Projects</h2>
-            <p class="section-subtitle reveal">13 projects pulled straight from <a href="https://github.com/mohitamode" target="_blank" rel="noopener" style="color:var(--color-accent-pink);font-weight:600">github.com/mohitamode</a> — each card links to the real repo</p>
+            <p class="section-subtitle reveal">13 projects pulled straight from <a href="https://github.com/mohitamode" target="_blank" rel="noopener" style="color:var(--color-accent-primary);font-weight:600">github.com/mohitamode</a> — each card links to the real repo</p>
             <div class="portfolio-grid">
 
                 <!-- ===== DATA ANALYTICS ===== -->
