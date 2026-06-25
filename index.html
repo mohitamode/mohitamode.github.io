@@ -225,13 +225,9 @@
         width: 100%; aspect-ratio: 1; max-width: 380px; margin-left: auto;
         border-radius: var(--radius-xl);
         background: var(--gradient-primary);
-        display: flex; align-items: center; justify-content: center;
+        object-fit: cover; object-position: center top;
+        display: block;
         box-shadow: var(--shadow-xl);
-    }
-    .hero-avatar span {
-        font-family: var(--font-heading);
-        font-size: 7rem; font-weight: 700; color: white;
-        letter-spacing: 2px;
     }
 
     .hero-stats {
@@ -435,7 +431,6 @@
         .container { padding: 0 var(--spacing-sm); }
         .hero-cta { flex-direction: column; width: 100%; }
         .btn { width: 100%; justify-content: center; }
-        .hero-avatar span { font-size: 5rem; }
     }
     </style>
 </head>
@@ -487,7 +482,7 @@
                 <div class="hero-image">
                     <div class="hero-image-wrapper">
                         <div class="hero-decoration"></div>
-                        <div class="hero-avatar"><span>MA</span></div>
+                        <img class="hero-avatar" src="assets/headshot.png" alt="Mohit Shyam Amode">
                     </div>
                 </div>
             </div>
